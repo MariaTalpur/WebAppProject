@@ -4,9 +4,10 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: WebAppProject  # 👈 add this line if your package.json is inside this folder
+   defaults:
+  run:
+    working-directory: WebAppProject/WebAppProject
+
 
     steps:
       - name: Checkout code
