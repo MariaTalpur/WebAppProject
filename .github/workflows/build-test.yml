@@ -1,13 +1,10 @@
 name: Build and Test
+
 on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-   defaults:
-  run:
-    working-directory: WebAppProject/WebAppProject
-
 
     steps:
       - name: Checkout code
@@ -23,10 +20,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      - name: Upload test report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: test-results || ./jest-junit.xml
